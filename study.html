@@ -1,0 +1,169 @@
+1번
+<script>
+  !true; // f
+  !false; // t
+  !!31; // t
+  !!1; // t
+  !!-1; // t
+  !!0; // f
+  !!'hello'; // t
+  !!NaN; // f
+  !!undefined; // f
+  !!null; // f
+
+  // 슬래쉬옆에 true 또는 false를 써주세요!
+</script>
+2번
+<script>
+  for (const i in [1, 2, 3]) {
+    // i 는 그냥 변수
+    console.log(i);
+  } // 출력되는 값은? 1 , 2, 3?
+  //  index 값 출력하는 [0,1,2] , in은 객체지만 배열에도 for..in 쓰인다 인덱스 값 출력 ,
+
+  for (const i of [1, 2, 3]) {
+    console.log(i);
+  } // 출력되는 값은? 1 , 2, 3? 배열안의값은 for ..of
+
+  // let obj1 = {'one':10,'two':20}
+
+  // obj.one = 10
+  // obj1['one'] // 10
+</script>
+3번
+<script>
+  console.log(parseInt(' ')); // 1 // NaN - 공백이라 숫자로 변환하지 못함
+  console.log(parseInt('')); // 0?  // NaN - 공백이라 숫자로 변환하지 못함
+  console.log(parseInt('hi')); // hi // // NaN - 문자라서 숫자로 변환하지 못함
+  console.log(parseInt('10 20')); // 10 20 // 10 - 앞에만 변환
+  console.log(parseInt('10abc')); // 10abc // 10 만 변환
+
+  // 출력되는 값을 슬래쉬 옆에 써주세요!
+</script>
+4번
+<script>
+  let username = '';
+  username = username || '무명'; // username이0 이면 뒤에값을 출력
+  username = username ?? '무명'; //  "" 가 출력,  null/undefined만 뒤에 값을 출력
+
+  console.log(username); // 어떤 값이 콘솔로그될까요? // 무명
+</script>
+5번
+<script>
+  const arr = ['apple', 'banana', 'cherry', 'durian', 'elderberry'];
+
+  console.log(arr.slice(1, 4)); // 반환되는 배열을 입력해주세요 ["banana", "cherry", "durian"]
+
+  console.log(arr); // 반환되는 배열을 입력해주세요 ["apple", "banana", "cherry", "durian", "elderberry"]; - 원본은 바뀌지않는다
+
+  arr.slice(1, 1); // 반환되는 배열을 입력해주세요   ["banana", "cherry", "durian", "elderberry"];
+</script>
+6번 - console
+<script>
+  const array1 = [1, 4, 9, 16];
+
+  // 등호 옆을 적어보세요. map을 이용해서 풀어보세요!
+  const map1 = console.log(map1);
+  //  Array [2, 8, 18, 32]  // array1.map(item=> item * 2)
+</script>
+7번
+<script>
+  //콘솔에 어떤게 찍힐까요?
+  const arr1 = ['hello', 'world', 'hojun'];
+
+  console.log(arr1.includes('world')); // includes - 포함 되어있는지 , true
+
+  console.log(arr1.includes('ho')); // false
+</script>
+8번 - console
+<script>
+  // 다음 user의 나이 평균을 구하세요.
+  let user = [
+    {
+      _id: '642e3071c61a23c70ae6076b',
+      index: 0,
+      age: 10,
+      name: 'Hicks Garza',
+      gender: 'male',
+    },
+    {
+      _id: '642e3071ecd6f90a87d64731',
+      index: 1,
+      age: 20,
+      name: 'Ayers Harrington',
+      gender: 'male',
+    },
+    {
+      _id: '642e3071cef9ddc131f047fb',
+      index: 2,
+      age: 30,
+      name: 'Lamb Adams',
+      gender: 'male',
+    },
+  ];
+
+  let sum = 0;
+  for (const i in user) {
+    console.log((sum += user[i].age));
+  }
+
+  //답
+  // user[0].age
+  // 31
+  // user[1].age
+  // 32
+  // user[2].age
+  // 39
+  // user[0].age + user[1].age + user[2].age
+  // 102
+  // (user[0].age + user[1].age + user[2].age) / 3
+  // 34
+</script>
+9번 - console
+<script>
+      let 수학점수 = [10, 30, 80, 40]
+      // 다음 수학 점수의 반평균을 구하세요.
+  //     let 수학점수 = [10, 30, 80, 40]
+
+  // let sum = 0;
+  // for(let i = 0; i<수학점수.length; i++) {
+  //     sum +=
+  // }
+    ------------------------------------------
+      //답
+      // in 풀이
+      let sumValue = 0;
+      for(const i in 수학점수) {
+          sumValue += 수학점수[i]
+      }
+      console.log(sumValue / 수학점수.length)
+
+
+      // of 풀이
+      let 수학점수 = [10, 30, 80, 40]
+
+      let sumValue = 0;
+      for(const i of 수학점수) {
+          sumValue += i
+      }
+      console.log(sumValue / 수학점수.length)
+
+      // 반복문
+      let sum = 0;
+      for(let i = 0; i < 수학점수. length; i++) {
+        sum += 수학점수[i]
+      }
+      console.log(sum / 수학점수.length);
+</script>
+10번
+<script>
+  let s = 0;
+  for (const i in '.'.repeat(101)) {
+    // repeat() 메서드는 문자열을 주어진 횟수만큼 반복해 붙인 새로운 문자열을 반환
+    // "."을 101번 반복한다
+    s += parseInt(i); // 0~100 까지 인덱스 값 합계, 문자열->숫자
+  }
+  console.log(s); // 5050
+  //s는 어떤 값을 반환할까요?
+</script>
+// repeat
